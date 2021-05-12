@@ -74,6 +74,8 @@ private extension AnimatableImageView {
         case .bottomRight:
             imageView.bounds = Utilities.rect(forSize: image.size)
             imageView.center = Utilities.bottomRight(forSize: image.size, insideSize: bounds.size)
+        @unknown default:
+            fatalError("Unkown content mode")
         }
     }
 }
